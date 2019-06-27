@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Log Viewer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <center>
+    <h1>MineCraft Paper Server Log Manager</h1>
+
+    <!-- Start Logger Selection dropdown -->
+
+    <div class="card" style="width: 50%;">
+            <div class="card-body">
+                <form method="POST" action="/" id="test" >
+
+                    <select name="log" class="form-control form-control-sm">
+
+                            <% data.forEach(function (fileData) {%>                
+                            <option value="<%= fileData %>"><%= fileData %></option>
+                        <%})%>
+
+                    </select>
+
+                    <input  type = "submit" value="Submit" class="btn btn-primary">
+                </form>
+            </div>
+    </div>
+
+    <!-- End Logger Selection dropdown -->
+
+    <br/>
+
+
+    <div class="card" style="width: 50%;">
+            <div class="card-body">
+              <pre><code>
+                  <%= content %>
+                 </code></pre>
+                 
+          </div>
+    </div>
+
+
+    <br/><br/><br/>
+
+    </center>
+</body>
+</html>
